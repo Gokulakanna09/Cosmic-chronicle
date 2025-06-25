@@ -62,6 +62,21 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Space theme colors
+        space: {
+          deep: "hsl(var(--space-deep))",
+          medium: "hsl(var(--space-medium))",
+          light: "hsl(var(--space-light))",
+          nebula: "hsl(var(--space-nebula))",
+          star: "hsl(var(--space-star))",
+          cosmic: "hsl(var(--space-cosmic))",
+        },
+        cosmic: {
+          purple: "hsl(var(--cosmic-purple))",
+          blue: "hsl(var(--cosmic-blue))",
+          pink: "hsl(var(--cosmic-pink))",
+          gold: "hsl(var(--cosmic-gold))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -85,10 +100,57 @@ export default {
             height: "0",
           },
         },
+        twinkle: {
+          "0%, 100%": { opacity: "0.3", transform: "scale(1)" },
+          "50%": { opacity: "1", transform: "scale(1.2)" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
+        "slide-up": {
+          from: { opacity: "0", transform: "translateY(20px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+        "fade-in": {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+        glow: {
+          "0%, 100%": { boxShadow: "0 0 20px rgba(147, 51, 234, 0.3)" },
+          "50%": { boxShadow: "0 0 40px rgba(147, 51, 234, 0.6)" },
+        },
+        "cosmic-drift": {
+          "0%": { transform: "translateX(-100vw) translateY(100vh)" },
+          "100%": { transform: "translateX(100vw) translateY(-100vh)" },
+        },
+        "particle-float": {
+          "0%, 100%": { transform: "translateY(0px) translateX(0px)" },
+          "25%": { transform: "translateY(-20px) translateX(10px)" },
+          "50%": { transform: "translateY(-10px) translateX(-5px)" },
+          "75%": { transform: "translateY(-30px) translateX(8px)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        twinkle: "twinkle 3s ease-in-out infinite",
+        "twinkle-delayed": "twinkle 3s ease-in-out infinite 1s",
+        "twinkle-delayed-2": "twinkle 3s ease-in-out infinite 2s",
+        float: "float 6s ease-in-out infinite",
+        "slide-up": "slide-up 0.5s ease-out",
+        "fade-in": "fade-in 0.5s ease-out",
+        glow: "glow 2s ease-in-out infinite",
+        "cosmic-drift": "cosmic-drift 20s linear infinite",
+        "particle-float": "particle-float 8s ease-in-out infinite",
+      },
+      backgroundImage: {
+        "space-gradient":
+          "linear-gradient(135deg, hsl(var(--space-deep)) 0%, hsl(var(--space-medium)) 50%, hsl(var(--space-light)) 100%)",
+        "cosmic-gradient":
+          "linear-gradient(45deg, hsl(var(--cosmic-purple)), hsl(var(--cosmic-blue)), hsl(var(--cosmic-pink)))",
+        "nebula-gradient":
+          "radial-gradient(circle at center, hsl(var(--cosmic-purple) / 0.3), hsl(var(--cosmic-blue) / 0.2), transparent)",
       },
     },
   },
