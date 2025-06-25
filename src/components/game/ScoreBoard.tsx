@@ -110,7 +110,7 @@ const ScoreBoard = ({
           Next Milestone
         </h3>
         <div className="space-y-2">
-          {constellationsCreated < 1 && (
+          {constellationsCount < 1 && (
             <div className="flex items-center gap-2 text-xs">
               <div className="w-2 h-2 bg-cosmic-gold rounded-full"></div>
               <span className="text-space-star/70">
@@ -118,12 +118,12 @@ const ScoreBoard = ({
               </span>
             </div>
           )}
-          {constellationsCreated >= 1 && constellationsCreated < 10 && (
+          {constellationsCount >= 1 && constellationsCount < 10 && (
             <div className="flex items-center gap-2 text-xs">
               <div className="w-2 h-2 bg-cosmic-purple rounded-full"></div>
               <span className="text-space-star/70">
-                Create {10 - constellationsCreated} more constellation
-                {10 - constellationsCreated !== 1 ? "s" : ""} for Cosmic Artist
+                Create {10 - constellationsCount} more constellation
+                {10 - constellationsCount !== 1 ? "s" : ""} for Cosmic Artist</span>
                 (+200 Stardust)
               </span>
             </div>
