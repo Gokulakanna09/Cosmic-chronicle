@@ -7,6 +7,7 @@ import {
   List,
   Gamepad2,
   Star,
+  Trophy,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import StarryBackground from "../components/StarryBackground";
@@ -186,6 +187,75 @@ const Index = () => {
                 <p className="text-space-star/70 text-sm">
                   Events currently shown
                 </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Sky Artist Game Promo */}
+        <section className="px-4 py-16">
+          <div className="max-w-6xl mx-auto">
+            <div className="relative glass-effect rounded-3xl p-8 md:p-12 border border-cosmic-gold/30 cosmic-glow overflow-hidden">
+              {/* Background decoration */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-cosmic-gold/10 rounded-full blur-3xl" />
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-cosmic-purple/10 rounded-full blur-3xl" />
+
+              <div className="relative z-10 text-center">
+                <div className="flex items-center justify-center gap-3 mb-6">
+                  <Star className="w-12 h-12 text-cosmic-gold animate-twinkle" />
+                  <Gamepad2 className="w-10 h-10 text-cosmic-purple" />
+                </div>
+
+                <h2 className="text-3xl md:text-5xl font-bold text-cosmic-gradient mb-4">
+                  Sky Artist
+                </h2>
+
+                <p className="text-xl md:text-2xl text-space-star/80 mb-6 max-w-3xl mx-auto">
+                  Become a cosmic creator! Connect real stars to form
+                  constellations, unlock ancient myths, and earn Stardust points
+                  in this immersive space game.
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                  <div className="glass-effect rounded-xl p-6 border border-cosmic-blue/20">
+                    <Star className="w-8 h-8 text-cosmic-blue mx-auto mb-3" />
+                    <h3 className="font-bold text-cosmic-blue mb-2">
+                      Connect Stars
+                    </h3>
+                    <p className="text-space-star/70 text-sm">
+                      Draw lines between real stars to create your own
+                      constellations
+                    </p>
+                  </div>
+
+                  <div className="glass-effect rounded-xl p-6 border border-cosmic-purple/20">
+                    <Rocket className="w-8 h-8 text-cosmic-purple mx-auto mb-3" />
+                    <h3 className="font-bold text-cosmic-purple mb-2">
+                      Unlock Stories
+                    </h3>
+                    <p className="text-space-star/70 text-sm">
+                      Each creation reveals cosmic myths and astronomical facts
+                    </p>
+                  </div>
+
+                  <div className="glass-effect rounded-xl p-6 border border-cosmic-gold/20">
+                    <Trophy className="w-8 h-8 text-cosmic-gold mx-auto mb-3" />
+                    <h3 className="font-bold text-cosmic-gold mb-2">
+                      Earn Stardust
+                    </h3>
+                    <p className="text-space-star/70 text-sm">
+                      Gain points for creativity and save your masterpieces
+                    </p>
+                  </div>
+                </div>
+
+                <Link
+                  to="/sky-artist"
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-cosmic-gold/20 hover:bg-cosmic-gold/30 border border-cosmic-gold/40 text-cosmic-gold rounded-xl text-lg font-medium transition-all duration-300 hover:scale-105 cosmic-glow"
+                >
+                  <Star className="w-6 h-6 animate-twinkle" />
+                  <span>Start Creating</span>
+                </Link>
               </div>
             </div>
           </div>
