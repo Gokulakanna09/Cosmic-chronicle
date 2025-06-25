@@ -1,19 +1,33 @@
 import { useState, useEffect } from "react";
-import { Shuffle, Telescope, Rocket, Calendar } from "lucide-react";
+import { Shuffle, Telescope, Rocket, Calendar, List } from "lucide-react";
 import StarryBackground from "../components/StarryBackground";
 import Timeline from "../components/Timeline";
 import DatePicker from "../components/DatePicker";
 import SpaceTrivia from "../components/SpaceTrivia";
-import { getEventsForDate, getRandomEvent } from "../data/astronomicalEvents";
+import {
+  getEventsForDate,
+  getRandomEvent,
+  getAllEvents,
+  getEventsByMonth,
+} from "../data/astronomicalEvents";
 
 const Index = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [events, setEvents] = useState(getEventsForDate(new Date()));
+  const [viewMode, setViewMode] = useState<"date" | "all" | "month">("date");
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    setEvents(getEventsForDate(selectedDate));
-  }, [selectedDate]);
+    if (viewMode === "date") {
+      const dateEvents = getEventsForDate(selectedDate);
+      setEvents(dateEvents);
+    } else if (viewMode === "month") {
+      const monthEvents = getEventsByMonth(selectedDate.getMonth() + 1);
+      setEvents(monthEvents);
+    } else {
+      setEvents(getAllEvents());
+    }
+  }, [selectedDate, viewMode]);
 
   const handleRandomEvent = () => {
     setIsLoading(true);
@@ -57,26 +71,66 @@ const Index = () => {
             </p>
 
             {/* Controls */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-slide-up">
-              <DatePicker
-                selectedDate={selectedDate}
-                onDateChange={handleDateChange}
-              />
-
-              <button
-                onClick={handleRandomEvent}
-                disabled={isLoading}
-                className="flex items-center gap-3 px-6 py-3 glass-effect rounded-xl border border-cosmic-pink/30 text-space-star hover:border-cosmic-pink/50 transition-all duration-300 cosmic-glow disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                <Shuffle
-                  className={`w-5 h-5 text-cosmic-pink ${
-                    isLoading ? "animate-spin" : ""
-                  }`}
+            <div className="flex flex-col items-center justify-center gap-4 mb-8 animate-slide-up">
+              {/* Primary Controls */}
+              <div className="flex flex-col sm:flex-row items-center gap-4">
+                <DatePicker
+                  selectedDate={selectedDate}
+                  onDateChange={handleDateChange}
                 />
-                <span className="font-medium">
-                  {isLoading ? "Finding..." : "Random Event"}
-                </span>
-              </button>
+
+                <button
+                  onClick={handleRandomEvent}
+                  disabled={isLoading}
+                  className="flex items-center gap-3 px-6 py-3 glass-effect rounded-xl border border-cosmic-pink/30 text-space-star hover:border-cosmic-pink/50 transition-all duration-300 cosmic-glow disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  <Shuffle
+                    className={`w-5 h-5 text-cosmic-pink ${
+                      isLoading ? "animate-spin" : ""
+                    }`}
+                  />
+                  <span className="font-medium">
+                    {isLoading ? "Finding..." : "Random Event"}
+                  </span>
+                </button>
+              </div>
+
+              {/* View Mode Controls */}
+              <div className="flex items-center gap-2 p-1 glass-effect rounded-lg border border-space-light/20">
+                <button
+                  onClick={() => setViewMode("date")}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                    viewMode === "date"
+                      ? "bg-cosmic-purple/30 text-cosmic-purple border border-cosmic-purple/50"
+                      : "text-space-star/70 hover:text-space-star hover:bg-space-light/20"
+                  }`}
+                >
+                  <Calendar className="w-4 h-4" />
+                  This Date
+                </button>
+                <button
+                  onClick={() => setViewMode("month")}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                    viewMode === "month"
+                      ? "bg-cosmic-blue/30 text-cosmic-blue border border-cosmic-blue/50"
+                      : "text-space-star/70 hover:text-space-star hover:bg-space-light/20"
+                  }`}
+                >
+                  <Calendar className="w-4 h-4" />
+                  This Month
+                </button>
+                <button
+                  onClick={() => setViewMode("all")}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                    viewMode === "all"
+                      ? "bg-cosmic-gold/30 text-cosmic-gold border border-cosmic-gold/50"
+                      : "text-space-star/70 hover:text-space-star hover:bg-space-light/20"
+                  }`}
+                >
+                  <List className="w-4 h-4" />
+                  All Events
+                </button>
+              </div>
             </div>
 
             {/* Stats */}
@@ -85,11 +139,11 @@ const Index = () => {
                 <div className="flex items-center justify-center gap-3 mb-2">
                   <Rocket className="w-6 h-6 text-cosmic-blue" />
                   <span className="text-2xl font-bold text-cosmic-blue">
-                    50+
+                    65+
                   </span>
                 </div>
                 <p className="text-space-star/70 text-sm">
-                  Historic space missions
+                  Historic space events
                 </p>
               </div>
 
@@ -97,11 +151,11 @@ const Index = () => {
                 <div className="flex items-center justify-center gap-3 mb-2">
                   <Telescope className="w-6 h-6 text-cosmic-purple" />
                   <span className="text-2xl font-bold text-cosmic-purple">
-                    100+
+                    12
                   </span>
                 </div>
                 <p className="text-space-star/70 text-sm">
-                  Astronomical discoveries
+                  Months of discoveries
                 </p>
               </div>
 
@@ -109,11 +163,11 @@ const Index = () => {
                 <div className="flex items-center justify-center gap-3 mb-2">
                   <Calendar className="w-6 h-6 text-cosmic-gold" />
                   <span className="text-2xl font-bold text-cosmic-gold">
-                    365
+                    {events.length}
                   </span>
                 </div>
                 <p className="text-space-star/70 text-sm">
-                  Days of exploration
+                  Events currently shown
                 </p>
               </div>
             </div>
@@ -123,7 +177,11 @@ const Index = () => {
         {/* Events timeline */}
         <section className="px-4 pb-16">
           <div className="max-w-7xl mx-auto">
-            <Timeline events={events} selectedDate={selectedDate} />
+            <Timeline
+              events={events}
+              selectedDate={selectedDate}
+              viewMode={viewMode}
+            />
           </div>
         </section>
 
