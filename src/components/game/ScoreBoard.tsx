@@ -123,7 +123,7 @@ const ScoreBoard = ({
               <div className="w-2 h-2 bg-cosmic-purple rounded-full"></div>
               <span className="text-space-star/70">
                 Create {10 - constellationsCount} more constellation
-                {10 - constellationsCount !== 1 ? "s" : ""} for Cosmic Artist</span>
+                {10 - constellationsCount !== 1 ? "s" : ""} for Cosmic Artist
                 (+200 Stardust)
               </span>
             </div>
