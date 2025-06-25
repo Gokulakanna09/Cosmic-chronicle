@@ -4,16 +4,40 @@ import AstronomicalEventCard from "./AstronomicalEvent";
 interface TimelineProps {
   events: AstronomicalEvent[];
   selectedDate: Date;
+  viewMode?: "date" | "all" | "month";
 }
 
-const Timeline = ({ events, selectedDate }: TimelineProps) => {
-  const formatDateHeader = (date: Date) => {
-    return date.toLocaleDateString("en-US", {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
+const Timeline = ({
+  events,
+  selectedDate,
+  viewMode = "date",
+}: TimelineProps) => {
+  const getHeaderText = () => {
+    if (viewMode === "all") {
+      return "All Astronomical Events";
+    } else if (viewMode === "month") {
+      return selectedDate.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+      });
+    } else {
+      return selectedDate.toLocaleDateString("en-US", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      });
+    }
+  };
+
+  const getSubheaderText = () => {
+    if (viewMode === "all") {
+      return "Complete database of space exploration milestones";
+    } else if (viewMode === "month") {
+      return `Events from ${selectedDate.toLocaleDateString("en-US", { month: "long" })}`;
+    } else {
+      return `Events from ${selectedDate.toLocaleDateString("en-US", { month: "long", day: "numeric" })}`;
+    }
   };
 
   if (events.length === 0) {
@@ -39,8 +63,8 @@ const Timeline = ({ events, selectedDate }: TimelineProps) => {
             No Events Found
           </h3>
           <p className="text-space-star/70 text-sm">
-            No astronomical events recorded for {formatDateHeader(selectedDate)}
-            . Try selecting a different date or click the Random Event button!
+            No astronomical events recorded for {getHeaderText()}. Try selecting
+            a different date, view mode, or click the Random Event button!
           </p>
         </div>
       </div>
@@ -49,14 +73,15 @@ const Timeline = ({ events, selectedDate }: TimelineProps) => {
 
   return (
     <div className="space-y-8">
-      {/* Date header */}
+      {/* Header */}
       <div className="text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-cosmic-gradient mb-2">
-          {formatDateHeader(selectedDate)}
+          {getHeaderText()}
         </h2>
-        <p className="text-space-star/70">
+        <p className="text-space-star/70 mb-2">{getSubheaderText()}</p>
+        <p className="text-space-star/60 text-sm">
           {events.length} astronomical event{events.length !== 1 ? "s" : ""}{" "}
-          recorded
+          {viewMode === "all" ? "in database" : "found"}
         </p>
       </div>
 
