@@ -1,5 +1,14 @@
 import { useState, useEffect } from "react";
-import { Shuffle, Telescope, Rocket, Calendar, List } from "lucide-react";
+import {
+  Shuffle,
+  Telescope,
+  Rocket,
+  Calendar,
+  List,
+  Gamepad2,
+  Star,
+} from "lucide-react";
+import { Link } from "react-router-dom";
 import StarryBackground from "../components/StarryBackground";
 import Timeline from "../components/Timeline";
 import DatePicker from "../components/DatePicker";
@@ -93,6 +102,14 @@ const Index = () => {
                     {isLoading ? "Finding..." : "Random Event"}
                   </span>
                 </button>
+
+                <Link
+                  to="/sky-artist"
+                  className="flex items-center gap-3 px-6 py-3 glass-effect rounded-xl border border-cosmic-gold/30 text-space-star hover:border-cosmic-gold/50 transition-all duration-300 cosmic-glow group"
+                >
+                  <Star className="w-5 h-5 text-cosmic-gold group-hover:animate-twinkle" />
+                  <span className="font-medium">Sky Artist Game</span>
+                </Link>
               </div>
 
               {/* View Mode Controls */}
