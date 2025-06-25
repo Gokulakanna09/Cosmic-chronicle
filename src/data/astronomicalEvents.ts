@@ -25,6 +25,18 @@ export const astronomicalEvents: AstronomicalEvent[] = [
   },
   {
     id: "2",
+    date: "01-07",
+    year: 1610,
+    title: "Galileo Discovers Jupiter's Moons",
+    description:
+      "Galileo Galilei first observed the four largest moons of Jupiter through his telescope, proving that not everything orbits Earth.",
+    type: "discovery",
+    imageUrl:
+      "https://images.unsplash.com/photo-1614313913007-2b4ae8ce32d6?w=800&q=80",
+    significance: "high",
+  },
+  {
+    id: "3",
     date: "01-15",
     year: 2006,
     title: "Stardust Returns to Earth",
@@ -35,10 +47,58 @@ export const astronomicalEvents: AstronomicalEvent[] = [
       "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
     significance: "high",
   },
+  {
+    id: "4",
+    date: "01-27",
+    year: 1967,
+    title: "Apollo 1 Fire",
+    description:
+      "A cabin fire during a launch rehearsal test killed three astronauts, leading to major safety improvements in the Apollo program.",
+    type: "anniversary",
+    imageUrl:
+      "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&q=80",
+    significance: "high",
+  },
+  {
+    id: "5",
+    date: "01-28",
+    year: 1986,
+    title: "Challenger Disaster",
+    description:
+      "Space Shuttle Challenger broke apart 73 seconds into flight, killing all seven crew members and temporarily halting the shuttle program.",
+    type: "anniversary",
+    imageUrl:
+      "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
+    significance: "high",
+  },
 
   // February Events
   {
-    id: "3",
+    id: "6",
+    date: "02-01",
+    year: 2003,
+    title: "Columbia Disaster",
+    description:
+      "Space Shuttle Columbia disintegrated during re-entry, killing all seven crew members and leading to shuttle program reforms.",
+    type: "anniversary",
+    imageUrl:
+      "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
+    significance: "high",
+  },
+  {
+    id: "7",
+    date: "02-11",
+    year: 2016,
+    title: "LIGO Detects Gravitational Waves",
+    description:
+      "The first direct detection of gravitational waves was announced, confirming Einstein's theory and opening a new era of astronomy.",
+    type: "discovery",
+    imageUrl:
+      "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
+    significance: "high",
+  },
+  {
+    id: "8",
     date: "02-18",
     year: 1930,
     title: "Discovery of Pluto",
@@ -50,7 +110,7 @@ export const astronomicalEvents: AstronomicalEvent[] = [
     significance: "high",
   },
   {
-    id: "4",
+    id: "9",
     date: "02-20",
     year: 1962,
     title: "John Glenn Orbits Earth",
@@ -61,10 +121,34 @@ export const astronomicalEvents: AstronomicalEvent[] = [
       "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&q=80",
     significance: "high",
   },
+  {
+    id: "10",
+    date: "02-24",
+    year: 1987,
+    title: "Supernova 1987A Observed",
+    description:
+      "The closest supernova explosion in nearly 400 years was observed, providing unprecedented data about stellar death.",
+    type: "observation",
+    imageUrl:
+      "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
+    significance: "high",
+  },
 
   // March Events
   {
-    id: "5",
+    id: "11",
+    date: "03-02",
+    year: 1972,
+    title: "Pioneer 10 Launch",
+    description:
+      "NASA launched Pioneer 10, the first spacecraft to travel through the asteroid belt and visit Jupiter.",
+    type: "mission",
+    imageUrl:
+      "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
+    significance: "high",
+  },
+  {
+    id: "12",
     date: "03-13",
     year: 1781,
     title: "Discovery of Uranus",
@@ -76,7 +160,19 @@ export const astronomicalEvents: AstronomicalEvent[] = [
     significance: "high",
   },
   {
-    id: "6",
+    id: "13",
+    date: "03-14",
+    year: 2018,
+    title: "Stephen Hawking Passes Away",
+    description:
+      "Renowned theoretical physicist Stephen Hawking died on Pi Day, leaving behind groundbreaking work on black holes and cosmology.",
+    type: "anniversary",
+    imageUrl:
+      "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
+    significance: "high",
+  },
+  {
+    id: "14",
     date: "03-20",
     year: 2015,
     title: "Total Solar Eclipse over Europe",
@@ -87,10 +183,34 @@ export const astronomicalEvents: AstronomicalEvent[] = [
       "https://images.unsplash.com/photo-1566055563071-2d4d64c4f303?w=800&q=80",
     significance: "medium",
   },
+  {
+    id: "15",
+    date: "03-21",
+    year: 2019,
+    title: "First Image of a Black Hole",
+    description:
+      "The Event Horizon Telescope collaboration released the first image of a black hole, located in galaxy M87.",
+    type: "discovery",
+    imageUrl:
+      "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
+    significance: "high",
+  },
 
   // April Events
   {
-    id: "7",
+    id: "16",
+    date: "04-03",
+    year: 1973,
+    title: "First Mobile Phone Call",
+    description:
+      "Martin Cooper made the first handheld cellular phone call, using technology derived from space communications.",
+    type: "anniversary",
+    imageUrl:
+      "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
+    significance: "medium",
+  },
+  {
+    id: "17",
     date: "04-12",
     year: 1961,
     title: "Yuri Gagarin's Space Flight",
@@ -102,7 +222,19 @@ export const astronomicalEvents: AstronomicalEvent[] = [
     significance: "high",
   },
   {
-    id: "8",
+    id: "18",
+    date: "04-14",
+    year: 1970,
+    title: "Apollo 13 Explosion",
+    description:
+      "Apollo 13's oxygen tank exploded, creating a near-disaster that became NASA's 'successful failure' through incredible teamwork.",
+    type: "anniversary",
+    imageUrl:
+      "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&q=80",
+    significance: "high",
+  },
+  {
+    id: "19",
     date: "04-24",
     year: 1990,
     title: "Hubble Space Telescope Launch",
@@ -113,10 +245,34 @@ export const astronomicalEvents: AstronomicalEvent[] = [
       "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
     significance: "high",
   },
+  {
+    id: "20",
+    date: "04-25",
+    year: 1990,
+    title: "Hubble's First Images",
+    description:
+      "Hubble Space Telescope began transmitting its first images, though initially blurry due to a mirror flaw later corrected.",
+    type: "observation",
+    imageUrl:
+      "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
+    significance: "medium",
+  },
 
   // May Events
   {
-    id: "9",
+    id: "21",
+    date: "05-01",
+    year: 2001,
+    title: "Dennis Tito Space Tourist",
+    description:
+      "Dennis Tito became the first space tourist, paying $20 million for a trip to the International Space Station.",
+    type: "mission",
+    imageUrl:
+      "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
+    significance: "medium",
+  },
+  {
+    id: "22",
     date: "05-05",
     year: 1961,
     title: "First American in Space",
@@ -128,7 +284,19 @@ export const astronomicalEvents: AstronomicalEvent[] = [
     significance: "high",
   },
   {
-    id: "10",
+    id: "23",
+    date: "05-14",
+    year: 1973,
+    title: "Skylab Space Station Launch",
+    description:
+      "America's first space station was launched, providing a platform for scientific research and long-duration spaceflight.",
+    type: "mission",
+    imageUrl:
+      "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
+    significance: "high",
+  },
+  {
+    id: "24",
     date: "05-25",
     year: 1961,
     title: "JFK's Moon Landing Goal",
@@ -139,10 +307,34 @@ export const astronomicalEvents: AstronomicalEvent[] = [
       "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&q=80",
     significance: "high",
   },
+  {
+    id: "25",
+    date: "05-30",
+    year: 1971,
+    title: "Mariner 9 Launch to Mars",
+    description:
+      "NASA launched Mariner 9, which became the first spacecraft to orbit another planet when it reached Mars.",
+    type: "mission",
+    imageUrl:
+      "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
+    significance: "high",
+  },
 
   // June Events
   {
-    id: "11",
+    id: "26",
+    date: "06-03",
+    year: 1965,
+    title: "First American Spacewalk",
+    description:
+      "Edward White became the first American to perform a spacewalk during the Gemini 4 mission, lasting 23 minutes.",
+    type: "mission",
+    imageUrl:
+      "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
+    significance: "high",
+  },
+  {
+    id: "27",
     date: "06-16",
     year: 1963,
     title: "First Woman in Space",
@@ -154,7 +346,31 @@ export const astronomicalEvents: AstronomicalEvent[] = [
     significance: "high",
   },
   {
-    id: "12",
+    id: "28",
+    date: "06-18",
+    year: 1983,
+    title: "Sally Ride - First American Woman in Space",
+    description:
+      "Sally Ride became the first American woman in space aboard Space Shuttle Challenger, inspiring generations of female astronauts.",
+    type: "mission",
+    imageUrl:
+      "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
+    significance: "high",
+  },
+  {
+    id: "29",
+    date: "06-21",
+    year: 2004,
+    title: "SpaceShipOne Reaches Space",
+    description:
+      "The first privately funded human spaceflight reached the edge of space, winning the Ansari X Prize.",
+    type: "mission",
+    imageUrl:
+      "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
+    significance: "high",
+  },
+  {
+    id: "30",
     date: "06-25",
     year: 1178,
     title: "Lunar Impact Observation",
@@ -168,7 +384,43 @@ export const astronomicalEvents: AstronomicalEvent[] = [
 
   // July Events
   {
-    id: "13",
+    id: "31",
+    date: "07-04",
+    year: 1997,
+    title: "Mars Pathfinder Landing",
+    description:
+      "NASA's Mars Pathfinder successfully landed on Mars, deploying the Sojourner rover and beginning a new era of Mars exploration.",
+    type: "mission",
+    imageUrl:
+      "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
+    significance: "high",
+  },
+  {
+    id: "32",
+    date: "07-14",
+    year: 2015,
+    title: "New Horizons Pluto Flyby",
+    description:
+      "NASA's New Horizons spacecraft made its closest approach to Pluto, providing the first detailed images of the dwarf planet.",
+    type: "mission",
+    imageUrl:
+      "https://images.unsplash.com/photo-1614732414444-096040ec8d57?w=800&q=80",
+    significance: "high",
+  },
+  {
+    id: "33",
+    date: "07-16",
+    year: 1969,
+    title: "Apollo 11 Launch",
+    description:
+      "Apollo 11 launched from Kennedy Space Center, beginning humanity's first journey to land on the Moon.",
+    type: "mission",
+    imageUrl:
+      "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&q=80",
+    significance: "high",
+  },
+  {
+    id: "34",
     date: "07-20",
     year: 1969,
     title: "Apollo 11 Moon Landing",
@@ -180,12 +432,12 @@ export const astronomicalEvents: AstronomicalEvent[] = [
     significance: "high",
   },
   {
-    id: "14",
-    date: "07-04",
-    year: 1997,
-    title: "Mars Pathfinder Landing",
+    id: "35",
+    date: "07-23",
+    year: 1999,
+    title: "Chandra X-ray Observatory Launch",
     description:
-      "NASA's Mars Pathfinder successfully landed on Mars, deploying the Sojourner rover and beginning a new era of Mars exploration.",
+      "NASA launched the Chandra X-ray Observatory, enabling detailed study of black holes, supernovas, and other high-energy phenomena.",
     type: "mission",
     imageUrl:
       "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
@@ -194,7 +446,43 @@ export const astronomicalEvents: AstronomicalEvent[] = [
 
   // August Events
   {
-    id: "15",
+    id: "36",
+    date: "08-05",
+    year: 2011,
+    title: "Juno Launch to Jupiter",
+    description:
+      "NASA launched the Juno spacecraft to Jupiter to study the planet's composition, gravity field, magnetic field, and polar magnetosphere.",
+    type: "mission",
+    imageUrl:
+      "https://images.unsplash.com/photo-1614313913007-2b4ae8ce32d6?w=800&q=80",
+    significance: "high",
+  },
+  {
+    id: "37",
+    date: "08-06",
+    year: 2012,
+    title: "Curiosity Rover Lands on Mars",
+    description:
+      "NASA's Curiosity rover successfully landed on Mars using the innovative sky crane system, beginning its search for signs of past life.",
+    type: "mission",
+    imageUrl:
+      "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
+    significance: "high",
+  },
+  {
+    id: "38",
+    date: "08-12",
+    year: 1960,
+    title: "Echo 1 Satellite Launch",
+    description:
+      "The first passive communications satellite was launched, a large balloon that reflected radio signals across Earth.",
+    type: "mission",
+    imageUrl:
+      "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
+    significance: "medium",
+  },
+  {
+    id: "39",
     date: "08-20",
     year: 1977,
     title: "Voyager 2 Launch",
@@ -206,7 +494,7 @@ export const astronomicalEvents: AstronomicalEvent[] = [
     significance: "high",
   },
   {
-    id: "16",
+    id: "40",
     date: "08-21",
     year: 2017,
     title: "Great American Eclipse",
@@ -220,7 +508,43 @@ export const astronomicalEvents: AstronomicalEvent[] = [
 
   // September Events
   {
-    id: "17",
+    id: "41",
+    date: "09-05",
+    year: 1977,
+    title: "Voyager 1 Launch",
+    description:
+      "NASA launched Voyager 1, which would become the first human-made object to enter interstellar space.",
+    type: "mission",
+    imageUrl:
+      "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
+    significance: "high",
+  },
+  {
+    id: "42",
+    date: "09-12",
+    year: 1962,
+    title: "JFK's Moon Speech",
+    description:
+      "President Kennedy delivered his famous 'We choose to go to the Moon' speech at Rice University, galvanizing public support.",
+    type: "anniversary",
+    imageUrl:
+      "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&q=80",
+    significance: "high",
+  },
+  {
+    id: "43",
+    date: "09-15",
+    year: 2017,
+    title: "Cassini's Final Plunge",
+    description:
+      "NASA's Cassini spacecraft ended its 13-year mission to Saturn with a planned descent into the planet's atmosphere, providing final data.",
+    type: "mission",
+    imageUrl:
+      "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
+    significance: "high",
+  },
+  {
+    id: "44",
     date: "09-23",
     year: 1846,
     title: "Discovery of Neptune",
@@ -232,21 +556,33 @@ export const astronomicalEvents: AstronomicalEvent[] = [
     significance: "high",
   },
   {
-    id: "18",
-    date: "09-15",
-    year: 2017,
-    title: "Cassini's Final Plunge",
+    id: "45",
+    date: "09-26",
+    year: 2022,
+    title: "DART Impact on Asteroid",
     description:
-      "NASA's Cassini spacecraft ended its 13-year mission to Saturn with a planned descent into the planet's atmosphere, providing final data.",
+      "NASA's DART spacecraft successfully impacted asteroid Dimorphos, demonstrating planetary defense capabilities.",
     type: "mission",
     imageUrl:
-      "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
+      "https://images.unsplash.com/photo-1614728263952-84ea256f9679?w=800&q=80",
     significance: "high",
   },
 
   // October Events
   {
-    id: "19",
+    id: "46",
+    date: "10-01",
+    year: 1958,
+    title: "NASA Established",
+    description:
+      "The National Aeronautics and Space Administration (NASA) was officially established, consolidating American space efforts.",
+    type: "anniversary",
+    imageUrl:
+      "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
+    significance: "high",
+  },
+  {
+    id: "47",
     date: "10-04",
     year: 1957,
     title: "Sputnik 1 Launch",
@@ -258,7 +594,31 @@ export const astronomicalEvents: AstronomicalEvent[] = [
     significance: "high",
   },
   {
-    id: "20",
+    id: "48",
+    date: "10-07",
+    year: 2008,
+    title: "Asteroid 2008 TC3 Impact",
+    description:
+      "The first asteroid detected before Earth impact, demonstrating our improving ability to track dangerous objects.",
+    type: "observation",
+    imageUrl:
+      "https://images.unsplash.com/photo-1614728263952-84ea256f9679?w=800&q=80",
+    significance: "medium",
+  },
+  {
+    id: "49",
+    date: "10-15",
+    year: 1997,
+    title: "Cassini-Huygens Launch",
+    description:
+      "The most ambitious interplanetary mission ever launched began its journey to Saturn, arriving seven years later.",
+    type: "mission",
+    imageUrl:
+      "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
+    significance: "high",
+  },
+  {
+    id: "50",
     date: "10-19",
     year: 1991,
     title: "Galileo's Asteroid Encounter",
@@ -272,7 +632,19 @@ export const astronomicalEvents: AstronomicalEvent[] = [
 
   // November Events
   {
-    id: "21",
+    id: "51",
+    date: "11-02",
+    year: 2000,
+    title: "First ISS Crew Arrives",
+    description:
+      "Expedition 1 arrived at the International Space Station, beginning continuous human presence in space for over 20 years.",
+    type: "mission",
+    imageUrl:
+      "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
+    significance: "high",
+  },
+  {
+    id: "52",
     date: "11-09",
     year: 1965,
     title: "Great Northeast Blackout",
@@ -284,7 +656,31 @@ export const astronomicalEvents: AstronomicalEvent[] = [
     significance: "low",
   },
   {
-    id: "22",
+    id: "53",
+    date: "11-12",
+    year: 2014,
+    title: "Philae Lands on Comet",
+    description:
+      "ESA's Philae lander became the first spacecraft to soft-land on a comet, touching down on 67P/Churyumov-Gerasimenko.",
+    type: "mission",
+    imageUrl:
+      "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
+    significance: "high",
+  },
+  {
+    id: "54",
+    date: "11-20",
+    year: 1998,
+    title: "ISS Construction Begins",
+    description:
+      "The first module of the International Space Station, Zarya, was launched, beginning construction of humanity's outpost in space.",
+    type: "mission",
+    imageUrl:
+      "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
+    significance: "high",
+  },
+  {
+    id: "55",
     date: "11-26",
     year: 2011,
     title: "Mars Science Laboratory Launch",
@@ -298,7 +694,19 @@ export const astronomicalEvents: AstronomicalEvent[] = [
 
   // December Events
   {
-    id: "23",
+    id: "56",
+    date: "12-03",
+    year: 1973,
+    title: "Pioneer 10 Jupiter Flyby",
+    description:
+      "Pioneer 10 became the first spacecraft to fly by Jupiter, sending back detailed images and data about the gas giant.",
+    type: "mission",
+    imageUrl:
+      "https://images.unsplash.com/photo-1614313913007-2b4ae8ce32d6?w=800&q=80",
+    significance: "high",
+  },
+  {
+    id: "57",
     date: "12-07",
     year: 1972,
     title: "Apollo 17 Launch",
@@ -310,7 +718,19 @@ export const astronomicalEvents: AstronomicalEvent[] = [
     significance: "high",
   },
   {
-    id: "24",
+    id: "58",
+    date: "12-14",
+    year: 1962,
+    title: "Mariner 2 Venus Flyby",
+    description:
+      "Mariner 2 became the first spacecraft to successfully fly by another planet, revealing Venus's harsh surface conditions.",
+    type: "mission",
+    imageUrl:
+      "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
+    significance: "high",
+  },
+  {
+    id: "59",
     date: "12-21",
     year: 2012,
     title: "Winter Solstice & Mayan Calendar",
@@ -320,6 +740,80 @@ export const astronomicalEvents: AstronomicalEvent[] = [
     imageUrl:
       "https://images.unsplash.com/photo-1532693322450-2cb5c511067d?w=800&q=80",
     significance: "medium",
+  },
+  {
+    id: "60",
+    date: "12-25",
+    year: 2021,
+    title: "James Webb Space Telescope Launch",
+    description:
+      "The most powerful space telescope ever built was launched on Christmas Day, designed to see the first galaxies formed after the Big Bang.",
+    type: "mission",
+    imageUrl:
+      "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
+    significance: "high",
+  },
+
+  // Additional events to fill more dates
+  {
+    id: "61",
+    date: "01-02",
+    year: 1959,
+    title: "Luna 1 Launch",
+    description:
+      "The Soviet Union launched Luna 1, the first spacecraft to reach the vicinity of the Moon and escape Earth's gravity.",
+    type: "mission",
+    imageUrl:
+      "https://images.unsplash.com/photo-1532693322450-2cb5c511067d?w=800&q=80",
+    significance: "high",
+  },
+  {
+    id: "62",
+    date: "01-03",
+    year: 2004,
+    title: "Spirit Rover Lands on Mars",
+    description:
+      "NASA's Spirit rover successfully landed on Mars, beginning an extended mission to search for evidence of past water activity.",
+    type: "mission",
+    imageUrl:
+      "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
+    significance: "high",
+  },
+  {
+    id: "63",
+    date: "01-25",
+    year: 2024,
+    title: "Opportunity Rover Ends Mission",
+    description:
+      "NASA's Opportunity rover, originally planned for 90 days, finally ended its mission after nearly 15 years on Mars.",
+    type: "anniversary",
+    imageUrl:
+      "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
+    significance: "high",
+  },
+  {
+    id: "64",
+    date: "02-05",
+    year: 2018,
+    title: "Falcon Heavy First Flight",
+    description:
+      "SpaceX successfully launched the Falcon Heavy rocket, sending Elon Musk's Tesla Roadster into space with a mannequin driver.",
+    type: "mission",
+    imageUrl:
+      "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
+    significance: "high",
+  },
+  {
+    id: "65",
+    date: "03-18",
+    year: 1965,
+    title: "First Spacewalk",
+    description:
+      "Soviet cosmonaut Alexei Leonov performed the first spacewalk in history, spending 12 minutes outside his spacecraft.",
+    type: "mission",
+    imageUrl:
+      "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
+    significance: "high",
   },
 ];
 
@@ -334,6 +828,11 @@ export const spaceTrivia = [
   "The Milky Way galaxy is on a collision course with the Andromeda galaxy in about 4.5 billion years.",
   "There are more possible games of chess than atoms in the observable universe.",
   "If you could drive a car to the Sun at highway speeds, it would take over 100 years to get there.",
+  "A single bolt of lightning contains enough energy to toast 100,000 slices of bread.",
+  "The International Space Station orbits Earth every 90 minutes at a speed of 17,500 mph.",
+  "Mercury has ice at its poles despite being the closest planet to the Sun.",
+  "Mars has the largest volcano in the solar system - Olympus Mons is three times taller than Mount Everest.",
+  "The moon is gradually moving away from Earth at about 1.5 inches per year.",
 ];
 
 export function getEventsForDate(date: Date): AstronomicalEvent[] {
@@ -344,6 +843,18 @@ export function getEventsForDate(date: Date): AstronomicalEvent[] {
   return astronomicalEvents.filter((event) => event.date === dateString);
 }
 
+export function getAllEvents(): AstronomicalEvent[] {
+  return astronomicalEvents.sort((a, b) => {
+    // Sort by date first (month-day), then by year
+    const dateA = new Date(`2024-${a.date}`);
+    const dateB = new Date(`2024-${b.date}`);
+    if (dateA.getTime() !== dateB.getTime()) {
+      return dateA.getTime() - dateB.getTime();
+    }
+    return a.year - b.year;
+  });
+}
+
 export function getRandomEvent(): AstronomicalEvent {
   const randomIndex = Math.floor(Math.random() * astronomicalEvents.length);
   return astronomicalEvents[randomIndex];
@@ -352,4 +863,11 @@ export function getRandomEvent(): AstronomicalEvent {
 export function getRandomTrivia(): string {
   const randomIndex = Math.floor(Math.random() * spaceTrivia.length);
   return spaceTrivia[randomIndex];
+}
+
+export function getEventsByMonth(month: number): AstronomicalEvent[] {
+  const monthString = String(month).padStart(2, "0");
+  return astronomicalEvents.filter((event) =>
+    event.date.startsWith(monthString),
+  );
 }
