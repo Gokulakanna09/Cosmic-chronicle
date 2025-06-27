@@ -65,7 +65,7 @@ const Index = () => {
           <div className="max-w-6xl mx-auto text-center">
             {/* Logo/Brand */}
             <div className="flex items-center justify-center gap-3 mb-6 animate-fade-in">
-              <div className="relative">
+              <div className="relative telescope-element">
                 <Telescope className="w-12 h-12 text-cosmic-purple animate-twinkle" />
                 <div className="absolute -top-1 -right-1 w-4 h-4 bg-cosmic-gold rounded-full animate-pulse" />
               </div>
@@ -165,7 +165,7 @@ const Index = () => {
                 </p>
               </div>
 
-              <div className="glass-effect rounded-xl p-6 cosmic-glow animate-slide-up animation-delay-200">
+              <div className="glass-effect rounded-xl p-6 cosmic-glow animate-slide-up animation-delay-200 telescope-element">
                 <div className="flex items-center justify-center gap-3 mb-2">
                   <Telescope className="w-6 h-6 text-cosmic-purple" />
                   <span className="text-2xl font-bold text-cosmic-purple">

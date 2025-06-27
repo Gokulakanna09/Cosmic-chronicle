@@ -198,7 +198,7 @@ const ConstellationCanvas = ({
       <canvas
         ref={canvasRef}
         className={`w-full h-full ${
-          isDrawing ? "cursor-crosshair" : "cursor-default"
+          isDrawing ? "drawing-mode" : "constellation-canvas"
         }`}
         onClick={handleCanvasClick}
         onMouseMove={handleCanvasMouseMove}
