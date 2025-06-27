@@ -130,6 +130,35 @@ export default {
           "50%": { transform: "translateY(-10px) translateX(-5px)" },
           "75%": { transform: "translateY(-30px) translateX(8px)" },
         },
+        "title-entrance": {
+          "0%": {
+            opacity: "0",
+            transform: "scale(0.5) rotateY(-180deg)",
+            filter: "blur(10px)",
+          },
+          "50%": {
+            opacity: "0.8",
+            transform: "scale(1.1) rotateY(0deg)",
+            filter: "blur(2px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "scale(1) rotateY(0deg)",
+            filter: "blur(0px)",
+          },
+        },
+        "cosmic-pulse": {
+          "0%, 100%": {
+            textShadow:
+              "0 0 20px rgba(147, 51, 234, 0.5), 0 0 40px rgba(147, 51, 234, 0.3)",
+            transform: "scale(1)",
+          },
+          "50%": {
+            textShadow:
+              "0 0 30px rgba(147, 51, 234, 0.8), 0 0 60px rgba(147, 51, 234, 0.5)",
+            transform: "scale(1.02)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -143,6 +172,8 @@ export default {
         glow: "glow 2s ease-in-out infinite",
         "cosmic-drift": "cosmic-drift 20s linear infinite",
         "particle-float": "particle-float 8s ease-in-out infinite",
+        "title-entrance": "title-entrance 1.5s ease-out",
+        "cosmic-pulse": "cosmic-pulse 3s ease-in-out infinite",
       },
       backgroundImage: {
         "space-gradient":
