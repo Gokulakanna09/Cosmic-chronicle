@@ -11,9 +11,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import StarryBackground from "../components/StarryBackground";
-import CosmicScene from "../components/3d/CosmicScene";
 import Timeline from "../components/Timeline";
-import Timeline3D from "../components/3d/Timeline3D";
 import DatePicker from "../components/DatePicker";
 import SpaceTrivia from "../components/SpaceTrivia";
 import {
@@ -27,7 +25,6 @@ const Index = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [events, setEvents] = useState(getEventsForDate(new Date()));
   const [viewMode, setViewMode] = useState<"date" | "all" | "month">("date");
-  const [view3D, setView3D] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -60,7 +57,6 @@ const Index = () => {
     <div className="min-h-screen relative overflow-x-hidden">
       {/* Background layers */}
       <StarryBackground />
-      <CosmicScene />
 
       {/* Main content */}
       <div className="relative z-10">
@@ -118,58 +114,39 @@ const Index = () => {
               </div>
 
               {/* View Mode Controls */}
-              <div className="flex flex-col sm:flex-row items-center gap-4">
-                <div className="flex items-center gap-2 p-1 glass-effect rounded-lg border border-space-light/20">
-                  <button
-                    onClick={() => setViewMode("date")}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
-                      viewMode === "date"
-                        ? "bg-cosmic-purple/30 text-cosmic-purple border border-cosmic-purple/50"
-                        : "text-space-star/70 hover:text-space-star hover:bg-space-light/20"
-                    }`}
-                  >
-                    <Calendar className="w-4 h-4" />
-                    This Date
-                  </button>
-                  <button
-                    onClick={() => setViewMode("month")}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
-                      viewMode === "month"
-                        ? "bg-cosmic-blue/30 text-cosmic-blue border border-cosmic-blue/50"
-                        : "text-space-star/70 hover:text-space-star hover:bg-space-light/20"
-                    }`}
-                  >
-                    <Calendar className="w-4 h-4" />
-                    This Month
-                  </button>
-                  <button
-                    onClick={() => setViewMode("all")}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
-                      viewMode === "all"
-                        ? "bg-cosmic-gold/30 text-cosmic-gold border border-cosmic-gold/50"
-                        : "text-space-star/70 hover:text-space-star hover:bg-space-light/20"
-                    }`}
-                  >
-                    <List className="w-4 h-4" />
-                    All Events
-                  </button>
-                </div>
-
-                {/* 3D View Toggle */}
+              <div className="flex items-center gap-2 p-1 glass-effect rounded-lg border border-space-light/20">
                 <button
-                  onClick={() => setView3D(!view3D)}
-                  className={`flex items-center gap-2 px-4 py-2 glass-effect rounded-lg border transition-all duration-200 ${
-                    view3D
-                      ? "border-cosmic-pink/50 text-cosmic-pink bg-cosmic-pink/10"
-                      : "border-space-light/20 text-space-star/70 hover:text-space-star hover:border-cosmic-pink/30"
+                  onClick={() => setViewMode("date")}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                    viewMode === "date"
+                      ? "bg-cosmic-purple/30 text-cosmic-purple border border-cosmic-purple/50"
+                      : "text-space-star/70 hover:text-space-star hover:bg-space-light/20"
                   }`}
                 >
-                  <div className="w-4 h-4 relative">
-                    <div className="absolute inset-0 border border-current rounded"></div>
-                    <div className="absolute inset-1 border border-current rounded opacity-60"></div>
-                    <div className="absolute inset-2 border border-current rounded opacity-30"></div>
-                  </div>
-                  <span className="font-medium">3D View</span>
+                  <Calendar className="w-4 h-4" />
+                  This Date
+                </button>
+                <button
+                  onClick={() => setViewMode("month")}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                    viewMode === "month"
+                      ? "bg-cosmic-blue/30 text-cosmic-blue border border-cosmic-blue/50"
+                      : "text-space-star/70 hover:text-space-star hover:bg-space-light/20"
+                  }`}
+                >
+                  <Calendar className="w-4 h-4" />
+                  This Month
+                </button>
+                <button
+                  onClick={() => setViewMode("all")}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                    viewMode === "all"
+                      ? "bg-cosmic-gold/30 text-cosmic-gold border border-cosmic-gold/50"
+                      : "text-space-star/70 hover:text-space-star hover:bg-space-light/20"
+                  }`}
+                >
+                  <List className="w-4 h-4" />
+                  All Events
                 </button>
               </div>
             </div>
@@ -287,31 +264,11 @@ const Index = () => {
         {/* Events timeline */}
         <section className="px-4 pb-16">
           <div className="max-w-7xl mx-auto">
-            {view3D ? (
-              <div className="space-y-8">
-                <div className="text-center">
-                  <h2 className="text-3xl md:text-4xl font-bold text-cosmic-gradient mb-4">
-                    3D Cosmic Timeline
-                  </h2>
-                  <p className="text-space-star/70 mb-6">
-                    Explore astronomical events in an immersive 3D space
-                  </p>
-                </div>
-                <Timeline3D
-                  events={events}
-                  selectedDate={selectedDate}
-                  onEventClick={(event) => {
-                    console.log("Event clicked:", event.title);
-                  }}
-                />
-              </div>
-            ) : (
-              <Timeline
-                events={events}
-                selectedDate={selectedDate}
-                viewMode={viewMode}
-              />
-            )}
+            <Timeline
+              events={events}
+              selectedDate={selectedDate}
+              viewMode={viewMode}
+            />
           </div>
         </section>
 
