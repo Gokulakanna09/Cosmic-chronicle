@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import StarryBackground from "../components/StarryBackground";
+import GameScene3D from "../components/3d/GameScene3D";
 import ConstellationCanvas from "../components/game/ConstellationCanvas";
 import ConstellationGallery from "../components/game/ConstellationGallery";
 import StoryModal from "../components/game/StoryModal";
@@ -205,6 +206,19 @@ const SkyArtist = () => {
     <div className="min-h-screen relative overflow-hidden bg-space-deep">
       {/* Background */}
       <StarryBackground />
+
+      {/* 3D Game Scene */}
+      <GameScene3D
+        constellationData={{
+          connections,
+          stars: stars.filter((star) => star.isConnected),
+        }}
+        stardust={totalStardust}
+        level={Math.floor(totalStardust / 500) + 1}
+        showAchievement={
+          currentConstellation ? "New Constellation Created!" : null
+        }
+      />
 
       {/* Audio */}
       <audio
