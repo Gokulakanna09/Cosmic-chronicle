@@ -5,12 +5,14 @@ interface TimelineProps {
   events: AstronomicalEvent[];
   selectedDate: Date;
   viewMode?: "date" | "all" | "month";
+  onEventClick?: (event: AstronomicalEvent) => void;
 }
 
 const Timeline = ({
   events,
   selectedDate,
   viewMode = "date",
+  onEventClick,
 }: TimelineProps) => {
   const getHeaderText = () => {
     if (viewMode === "all") {
@@ -109,7 +111,11 @@ const Timeline = ({
                   <div
                     className={`w-5/12 ${index % 2 === 0 ? "pr-8" : "pl-8"}`}
                   >
-                    <AstronomicalEventCard event={event} index={index} />
+                    <AstronomicalEventCard
+                      event={event}
+                      index={index}
+                      onEventClick={onEventClick}
+                    />
                   </div>
                 </div>
               ))}
@@ -124,7 +130,11 @@ const Timeline = ({
             .sort((a, b) => a.year - b.year)
             .map((event, index) => (
               <div key={event.id} className="flex justify-center">
-                <AstronomicalEventCard event={event} index={index} />
+                <AstronomicalEventCard
+                  event={event}
+                  index={index}
+                  onEventClick={onEventClick}
+                />
               </div>
             ))}
         </div>
@@ -138,7 +148,11 @@ const Timeline = ({
               .sort((a, b) => a.year - b.year)
               .map((event, index) => (
                 <div key={event.id} className="flex-shrink-0">
-                  <AstronomicalEventCard event={event} index={index} />
+                  <AstronomicalEventCard
+                    event={event}
+                    index={index}
+                    onEventClick={onEventClick}
+                  />
                 </div>
               ))}
           </div>
