@@ -4,6 +4,7 @@ import { Calendar, Star, Telescope, Rocket, Eye, Clock } from "lucide-react";
 interface AstronomicalEventProps {
   event: AstronomicalEvent;
   index: number;
+  onEventClick?: (event: AstronomicalEvent) => void;
 }
 
 const getEventIcon = (type: AstronomicalEvent["type"]) => {
@@ -38,7 +39,11 @@ const getSignificanceColor = (
   }
 };
 
-const AstronomicalEventCard = ({ event, index }: AstronomicalEventProps) => {
+const AstronomicalEventCard = ({
+  event,
+  index,
+  onEventClick,
+}: AstronomicalEventProps) => {
   return (
     <div
       className={`group relative min-w-[350px] max-w-[400px] h-[500px] glass-effect rounded-2xl p-6 transform transition-all duration-500 hover:scale-105 cosmic-glow animate-slide-up cursor-pointer ${
