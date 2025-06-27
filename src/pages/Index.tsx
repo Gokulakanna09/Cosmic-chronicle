@@ -28,6 +28,10 @@ const Index = () => {
   );
   const [viewMode, setViewMode] = useState<"date" | "all" | "month">("date");
   const [isLoading, setIsLoading] = useState(false);
+  const [selectedEvent, setSelectedEvent] = useState<AstronomicalEvent | null>(
+    null,
+  );
+  const [isStoryModalOpen, setIsStoryModalOpen] = useState(false);
 
   useEffect(() => {
     if (viewMode === "date") {
@@ -53,6 +57,16 @@ const Index = () => {
 
   const handleDateChange = (newDate: Date) => {
     setSelectedDate(newDate);
+  };
+
+  const handleEventClick = (event: AstronomicalEvent) => {
+    setSelectedEvent(event);
+    setIsStoryModalOpen(true);
+  };
+
+  const closeStoryModal = () => {
+    setIsStoryModalOpen(false);
+    setSelectedEvent(null);
   };
 
   return (
@@ -270,10 +284,10 @@ const Index = () => {
               events={events}
               selectedDate={selectedDate}
               viewMode={viewMode}
+              onEventClick={handleEventClick}
             />
           </div>
         </section>
-
         {/* Footer */}
         <footer className="px-4 py-8 border-t border-space-light/20">
           <div className="max-w-4xl mx-auto text-center">
@@ -298,6 +312,13 @@ const Index = () => {
 
       {/* Space trivia */}
       <SpaceTrivia />
+
+      {/* Event Story Modal */}
+      <EventStoryModal
+        event={selectedEvent}
+        isOpen={isStoryModalOpen}
+        onClose={closeStoryModal}
+      />
     </div>
   );
 };
