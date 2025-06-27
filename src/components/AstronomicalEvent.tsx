@@ -41,8 +41,11 @@ const getSignificanceColor = (
 const AstronomicalEventCard = ({ event, index }: AstronomicalEventProps) => {
   return (
     <div
-      className={`group relative min-w-[350px] max-w-[400px] h-[500px] glass-effect rounded-2xl p-6 transform transition-all duration-500 hover:scale-105 cosmic-glow animate-slide-up`}
+      className={`group relative min-w-[350px] max-w-[400px] h-[500px] glass-effect rounded-2xl p-6 transform transition-all duration-500 hover:scale-105 cosmic-glow animate-slide-up cursor-pointer ${
+        onEventClick ? "hover:border-cosmic-gold/60" : ""
+      }`}
       style={{ animationDelay: `${index * 0.2}s` }}
+      onClick={() => onEventClick?.(event)}
     >
       {/* Background image */}
       <div className="absolute inset-0 rounded-2xl overflow-hidden">
@@ -79,15 +82,24 @@ const AstronomicalEventCard = ({ event, index }: AstronomicalEventProps) => {
           {event.description}
         </p>
 
-        {/* Date */}
-        <div className="flex items-center gap-2 text-cosmic-gold">
-          <Calendar className="w-4 h-4" />
-          <span className="text-sm font-medium">
-            {new Date(`2024-${event.date}`).toLocaleDateString("en-US", {
-              month: "long",
-              day: "numeric",
-            })}
-          </span>
+        {/* Date and Click Hint */}
+        <div className="space-y-2">
+          <div className="flex items-center gap-2 text-cosmic-gold">
+            <Calendar className="w-4 h-4" />
+            <span className="text-sm font-medium">
+              {new Date(`2024-${event.date}`).toLocaleDateString("en-US", {
+                month: "long",
+                day: "numeric",
+              })}
+            </span>
+          </div>
+
+          {onEventClick && (
+            <div className="flex items-center gap-2 text-cosmic-purple/70 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+              <span>📖</span>
+              <span>Click to read the full story</span>
+            </div>
+          )}
         </div>
 
         {/* Hover overlay */}
