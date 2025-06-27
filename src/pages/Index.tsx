@@ -87,8 +87,34 @@ const Index = () => {
                 <Telescope className="w-12 h-12 text-cosmic-purple animate-twinkle" />
                 <div className="absolute -top-1 -right-1 w-4 h-4 bg-cosmic-gold rounded-full animate-pulse" />
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold text-cosmic-gradient">
-                Cosmic Chronicle
+              <h1 className="text-4xl md:text-6xl font-bold animated-title">
+                <span className="cosmic-word">
+                  {"Cosmic".split("").map((letter, index) => (
+                    <span
+                      key={index}
+                      className="cosmic-letter"
+                      style={{
+                        animationDelay: `${index * 0.1}s`,
+                      }}
+                    >
+                      {letter}
+                    </span>
+                  ))}
+                </span>
+                <span className="mx-4 text-cosmic-gold animate-pulse">✨</span>
+                <span className="chronicle-word">
+                  {"Chronicle".split("").map((letter, index) => (
+                    <span
+                      key={index}
+                      className="chronicle-letter"
+                      style={{
+                        animationDelay: `${(index + 6) * 0.1}s`,
+                      }}
+                    >
+                      {letter}
+                    </span>
+                  ))}
+                </span>
               </h1>
             </div>
 
