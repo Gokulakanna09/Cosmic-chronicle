@@ -98,7 +98,7 @@ const ConstellationGallery = ({
                   {constellations.map((constellation) => (
                     <div
                       key={constellation.id}
-                      className={`group relative glass-effect rounded-xl p-4 border cursor-pointer transition-all duration-300 hover:scale-105 cosmic-glow ${
+                      className={`group relative glass-effect rounded-xl p-4 border constellation-canvas transition-all duration-300 hover:scale-105 cosmic-glow ${
                         selectedConstellation?.id === constellation.id
                           ? "border-cosmic-gold/50 bg-cosmic-gold/10"
                           : "border-space-light/20 hover:border-cosmic-purple/40"

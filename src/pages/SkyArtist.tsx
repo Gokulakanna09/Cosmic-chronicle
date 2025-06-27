@@ -225,7 +225,7 @@ const SkyArtist = () => {
               <span className="font-medium">Back to Chronicle</span>
             </Link>
             <div className="h-6 w-px bg-space-light/30" />
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 telescope-element">
               <Star className="w-8 h-8 text-cosmic-gold animate-twinkle" />
               <h1 className="text-2xl font-bold text-cosmic-gradient">
                 Sky Artist
