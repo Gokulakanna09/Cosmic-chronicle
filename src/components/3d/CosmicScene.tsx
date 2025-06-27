@@ -10,6 +10,7 @@ import {
   Torus,
   Text,
 } from "@react-three/drei";
+import { AnimatedLogo3D } from "./FloatingElements";
 import * as THREE from "three";
 
 // Animated Planet Component
@@ -247,19 +248,8 @@ function Scene3D() {
       {/* Background Grid */}
       <GridBackground />
 
-      {/* Floating Text */}
-      <Float speed={2} rotationIntensity={0.3} floatIntensity={0.3}>
-        <Text
-          position={[0, 4, -3]}
-          fontSize={0.5}
-          color="#fbbf24"
-          anchorX="center"
-          anchorY="middle"
-          font="/fonts/SpaceGrotesk-Bold.woff"
-        >
-          COSMIC CHRONICLE
-        </Text>
-      </Float>
+      {/* 3D Logo */}
+      <AnimatedLogo3D position={[0, 2, -3]} />
 
       {/* Orbit Controls for interaction */}
       <OrbitControls
