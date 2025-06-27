@@ -118,11 +118,160 @@ const Index = () => {
               </h1>
             </div>
 
-            {/* Tagline */}
-            <p className="text-xl md:text-2xl text-space-star/80 mb-8 max-w-3xl mx-auto leading-relaxed animate-slide-up">
-              Discover the astronomical events that shaped our understanding of
-              the universe, one date at a time
-            </p>
+            {/* Animated tagline */}
+            <div className="relative mb-8">
+              {/* Background glow effect */}
+              <div className="absolute inset-0 bg-cosmic-purple/10 blur-xl rounded-full animate-pulse" />
+
+              <p className="relative text-xl md:text-2xl text-space-star/80 max-w-3xl mx-auto leading-relaxed animated-tagline">
+                <span className="tagline-word">
+                  {"Discover".split("").map((letter, index) => (
+                    <span
+                      key={index}
+                      className="tagline-letter"
+                      style={{
+                        animationDelay: `${1.5 + index * 0.05}s`,
+                      }}
+                    >
+                      {letter}
+                    </span>
+                  ))}
+                </span>{" "}
+                <span className="tagline-word">
+                  {"the".split("").map((letter, index) => (
+                    <span
+                      key={index}
+                      className="tagline-letter"
+                      style={{
+                        animationDelay: `${1.9 + index * 0.05}s`,
+                      }}
+                    >
+                      {letter}
+                    </span>
+                  ))}
+                </span>{" "}
+                <span className="tagline-word text-cosmic-gold">
+                  {"astronomical".split("").map((letter, index) => (
+                    <span
+                      key={index}
+                      className="tagline-letter-gold"
+                      style={{
+                        animationDelay: `${2.1 + index * 0.05}s`,
+                      }}
+                    >
+                      {letter}
+                    </span>
+                  ))}
+                </span>{" "}
+                <span className="tagline-word">
+                  {"events".split("").map((letter, index) => (
+                    <span
+                      key={index}
+                      className="tagline-letter"
+                      style={{
+                        animationDelay: `${2.8 + index * 0.05}s`,
+                      }}
+                    >
+                      {letter}
+                    </span>
+                  ))}
+                </span>
+                <br />
+                <span className="tagline-word">
+                  {"that".split("").map((letter, index) => (
+                    <span
+                      key={index}
+                      className="tagline-letter"
+                      style={{
+                        animationDelay: `${3.2 + index * 0.05}s`,
+                      }}
+                    >
+                      {letter}
+                    </span>
+                  ))}
+                </span>{" "}
+                <span className="tagline-word">
+                  {"shaped".split("").map((letter, index) => (
+                    <span
+                      key={index}
+                      className="tagline-letter"
+                      style={{
+                        animationDelay: `${3.4 + index * 0.05}s`,
+                      }}
+                    >
+                      {letter}
+                    </span>
+                  ))}
+                </span>{" "}
+                <span className="tagline-word">
+                  {"our".split("").map((letter, index) => (
+                    <span
+                      key={index}
+                      className="tagline-letter"
+                      style={{
+                        animationDelay: `${3.7 + index * 0.05}s`,
+                      }}
+                    >
+                      {letter}
+                    </span>
+                  ))}
+                </span>{" "}
+                <span className="tagline-word text-cosmic-blue">
+                  {"understanding".split("").map((letter, index) => (
+                    <span
+                      key={index}
+                      className="tagline-letter-blue"
+                      style={{
+                        animationDelay: `${3.9 + index * 0.05}s`,
+                      }}
+                    >
+                      {letter}
+                    </span>
+                  ))}
+                </span>{" "}
+                <span className="tagline-word">
+                  {"of".split("").map((letter, index) => (
+                    <span
+                      key={index}
+                      className="tagline-letter"
+                      style={{
+                        animationDelay: `${4.6 + index * 0.05}s`,
+                      }}
+                    >
+                      {letter}
+                    </span>
+                  ))}
+                </span>
+                <br />
+                <span className="tagline-word">
+                  {"the".split("").map((letter, index) => (
+                    <span
+                      key={index}
+                      className="tagline-letter"
+                      style={{
+                        animationDelay: `${4.8 + index * 0.05}s`,
+                      }}
+                    >
+                      {letter}
+                    </span>
+                  ))}
+                </span>{" "}
+                <span className="tagline-word text-cosmic-purple">
+                  {"universe".split("").map((letter, index) => (
+                    <span
+                      key={index}
+                      className="tagline-letter-purple"
+                      style={{
+                        animationDelay: `${5.0 + index * 0.05}s`,
+                      }}
+                    >
+                      {letter}
+                    </span>
+                  ))}
+                </span>
+                <span className="text-cosmic-pink ml-2 animate-pulse">🌌</span>
+              </p>
+            </div>
 
             {/* Controls */}
             <div className="flex flex-col items-center justify-center gap-4 mb-8 animate-slide-up">
