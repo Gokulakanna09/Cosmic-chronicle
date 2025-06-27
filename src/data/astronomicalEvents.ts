@@ -4,9 +4,12 @@ export interface AstronomicalEvent {
   year: number;
   title: string;
   description: string;
+  story: string; // Detailed narrative story
   type: "discovery" | "mission" | "observation" | "phenomenon" | "anniversary";
   imageUrl: string;
   significance: "high" | "medium" | "low";
+  characters?: string[]; // Key people involved
+  timeline?: { time: string; event: string }[]; // Timeline of events
 }
 
 export const astronomicalEvents: AstronomicalEvent[] = [
@@ -18,10 +21,29 @@ export const astronomicalEvents: AstronomicalEvent[] = [
     title: "Discovery of Ceres",
     description:
       "Giuseppe Piazzi discovered Ceres, the first asteroid ever found and now classified as a dwarf planet. This discovery opened our understanding of the asteroid belt.",
+    story:
+      "On the first night of the new century, Giuseppe Piazzi, an Italian astronomer working at the Palermo Observatory, was methodically cataloguing stars when something extraordinary caught his attention. A faint point of light seemed to have moved slightly from where it should have been according to his star charts.\n\nIntrigued, Piazzi observed this mysterious object for several nights. Night after night, it continued to move against the background of fixed stars - a clear sign that this was no ordinary star. What Piazzi had discovered was something entirely new to human knowledge: the first asteroid.\n\nHe initially thought it might be a comet, but it lacked the characteristic tail. As weeks passed and more observations were made, it became clear this was a new type of celestial body orbiting between Mars and Jupiter. Piazzi named it Ceres, after the Roman goddess of harvest and protector of Sicily.\n\nThis discovery revolutionized our understanding of the solar system. Ceres wasn't just a rock floating in space - it was large enough to be classified as a dwarf planet, and its discovery opened the door to finding thousands more asteroids in what we now call the asteroid belt. Piazzi had unwittingly discovered an entire new class of objects that filled the mysterious gap between Mars and Jupiter.",
     type: "discovery",
     imageUrl:
       "https://images.unsplash.com/photo-1614728263952-84ea256f9679?w=800&q=80",
     significance: "high",
+    characters: ["Giuseppe Piazzi"],
+    timeline: [
+      { time: "January 1, 1801", event: "First observation of moving object" },
+      {
+        time: "January 2-24, 1801",
+        event: "Continued tracking and measurements",
+      },
+      {
+        time: "February 1801",
+        event: "Piazzi falls ill, loses track of object",
+      },
+      {
+        time: "December 1801",
+        event: "Gauss calculates orbit, object rediscovered",
+      },
+      { time: "1802", event: "Officially named Ceres" },
+    ],
   },
   {
     id: "2",
@@ -426,10 +448,31 @@ export const astronomicalEvents: AstronomicalEvent[] = [
     title: "Apollo 11 Moon Landing",
     description:
       "Neil Armstrong and Buzz Aldrin became the first humans to walk on the Moon, fulfilling Kennedy's promise and marking humanity's greatest space achievement.",
+    story:
+      "July 20, 1969 - A day that would forever change human history. As the lunar module Eagle descended toward the Moon's surface, Neil Armstrong's heart rate climbed. The computer was overloading with alarms, fuel was running dangerously low, and the designated landing site was scattered with boulders.\n\nWith only 30 seconds of fuel remaining, Armstrong took manual control. Flying over the boulder field, he spotted a clear area and gently set the Eagle down. 'The Eagle has landed,' he radioed back to Earth, words that would echo through history.\n\nSix and a half hours later, Armstrong opened the hatch and stepped onto the lunar surface. As his left foot touched the powdery regolith, he spoke the words watched by 650 million people: 'That's one small step for man, one giant leap for mankind.'\n\nBuzz Aldrin joined him 19 minutes later, describing the lunar landscape as 'magnificent desolation.' For 21 hours and 36 minutes, they explored, collected samples, planted an American flag, and left a plaque reading: 'Here men from the planet Earth first set foot upon the Moon July 1969 A.D. We came in peace for all mankind.'\n\nMeanwhile, Michael Collins orbited alone in the command module, maintaining communication and preparing for the reunion. The successful return three days later proved that the impossible dream had become reality - humans had touched another world and returned safely home.",
     type: "mission",
     imageUrl:
       "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&q=80",
     significance: "high",
+    characters: ["Neil Armstrong", "Buzz Aldrin", "Michael Collins"],
+    timeline: [
+      {
+        time: "July 16, 1969",
+        event: "Apollo 11 launches from Kennedy Space Center",
+      },
+      { time: "July 19, 1969", event: "Spacecraft enters lunar orbit" },
+      { time: "July 20, 1969 - 20:17 UTC", event: "Eagle lands on the Moon" },
+      {
+        time: "July 21, 1969 - 02:56 UTC",
+        event: "Armstrong steps onto lunar surface",
+      },
+      {
+        time: "July 21, 1969 - 03:15 UTC",
+        event: "Aldrin joins Armstrong on surface",
+      },
+      { time: "July 21, 1969 - 17:54 UTC", event: "Eagle lifts off from Moon" },
+      { time: "July 24, 1969", event: "Safe splashdown in Pacific Ocean" },
+    ],
   },
   {
     id: "35",
