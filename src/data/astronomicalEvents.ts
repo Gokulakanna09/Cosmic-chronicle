@@ -262,10 +262,30 @@ export const astronomicalEvents: AstronomicalEvent[] = [
     title: "Hubble Space Telescope Launch",
     description:
       "The Hubble Space Telescope was launched, revolutionizing our understanding of the universe with unprecedented deep space imagery.",
+    story:
+      "April 24, 1990 - After two decades of planning, political battles, and technical challenges, the Space Shuttle Discovery lifted off carrying humanity's most ambitious scientific instrument: the Hubble Space Telescope.\n\nNamed after astronomer Edwin Hubble, who discovered that the universe was expanding, this school-bus-sized telescope represented a dream decades in the making. Scientists had long envisioned placing a telescope above Earth's atmosphere, free from the blurring effects that limit ground-based observations.\n\nAs Discovery's robotic arm carefully deployed Hubble into orbit 353 miles above Earth, mission controllers held their breath. Initial tests seemed promising, but when the first images arrived, disaster struck. The images were blurry - Hubble's primary mirror had a flaw smaller than 1/50th the width of a human hair, but enough to ruin its vision.\n\nWhat followed was one of NASA's greatest comeback stories. In 1993, astronauts performed a daring repair mission, essentially giving Hubble 'contact lenses' to correct its vision. When the first corrected images arrived, they were breathtaking - crisp, clear views of distant galaxies, nebulae, and cosmic phenomena.\n\nHubble went on to revolutionize astronomy, discovering that the universe's expansion is accelerating, helping determine the age of the universe at 13.8 billion years, and capturing images that brought the cosmos to millions of people worldwide. It remains one of humanity's greatest scientific achievements.",
     type: "mission",
     imageUrl:
       "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
     significance: "high",
+    characters: ["Edwin Hubble", "Lyman Spitzer", "Nancy Grace Roman"],
+    timeline: [
+      { time: "1946", event: "Lyman Spitzer proposes space telescope concept" },
+      {
+        time: "1977",
+        event: "Congress approves funding for Large Space Telescope",
+      },
+      { time: "1990", event: "Hubble launches aboard Space Shuttle Discovery" },
+      {
+        time: "1990",
+        event: "First images reveal spherical aberration problem",
+      },
+      { time: "1993", event: "STS-61 repair mission fixes Hubble's vision" },
+      {
+        time: "1995",
+        event: "Hubble Deep Field image reveals distant galaxies",
+      },
+    ],
   },
   {
     id: "20",
@@ -631,10 +651,25 @@ export const astronomicalEvents: AstronomicalEvent[] = [
     title: "Sputnik 1 Launch",
     description:
       "The Soviet Union launched Sputnik 1, the first artificial satellite, beginning the Space Age and the Space Race.",
+    story:
+      "October 4, 1957 - At 7:28 PM Moscow time, a modified R-7 intercontinental ballistic missile roared to life at the Baikonur Cosmodrome in Kazakhstan. Atop this powerful rocket sat a simple but revolutionary payload: a polished aluminum sphere about the size of a beach ball, equipped with four radio antennas.\n\nThis was Sputnik 1 - Russian for 'traveling companion' - and it was about to change the world forever.\n\nAs the rocket's engines cut off and the satellite separated, Sputnik began its historic journey around Earth every 96 minutes. Its radio transmitter sent out a steady 'beep-beep-beep' signal that could be picked up by amateur radio operators around the globe.\n\nIn the United States, the reaction was immediate and profound. Americans had assumed they led the world in technology, but here was proof that the Soviet Union had achieved something extraordinary first. The satellite's radio signals, audible to anyone with a shortwave radio, became the soundtrack of a new era.\n\nSputnik 1 orbited Earth for three weeks before its batteries died, and it burned up in the atmosphere after 92 days. But in that brief time, it had launched the Space Age, triggered the Space Race, and fundamentally changed how humanity saw itself and its place in the cosmos. The tiny satellite proved that space was no longer the realm of science fiction - it was humanity's next frontier.",
     type: "mission",
     imageUrl:
       "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?w=800&q=80",
     significance: "high",
+    characters: ["Sergei Korolev", "Konstantin Tsiolkovsky"],
+    timeline: [
+      {
+        time: "October 4, 1957 - 19:28 UTC",
+        event: "Sputnik 1 launches from Baikonur",
+      },
+      {
+        time: "October 4, 1957 - 20:29 UTC",
+        event: "First radio signals received",
+      },
+      { time: "October 26, 1957", event: "Transmitter batteries die" },
+      { time: "January 4, 1958", event: "Sputnik 1 burns up in atmosphere" },
+    ],
   },
   {
     id: "48",
