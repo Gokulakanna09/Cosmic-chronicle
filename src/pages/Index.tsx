@@ -14,11 +14,13 @@ import StarryBackground from "../components/StarryBackground";
 import Timeline from "../components/Timeline";
 import DatePicker from "../components/DatePicker";
 import SpaceTrivia from "../components/SpaceTrivia";
+import EventStoryModal from "../components/EventStoryModal";
 import {
   getEventsForDate,
   getRandomEvent,
   getAllEvents,
   getEventsByMonth,
+  type AstronomicalEvent,
 } from "../data/astronomicalEvents";
 
 const Index = () => {
