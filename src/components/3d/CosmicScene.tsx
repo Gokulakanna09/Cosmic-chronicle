@@ -1,4 +1,4 @@
-import { useRef, useMemo } from "react";
+import { useRef, useMemo, useState } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import {
   Sphere,
@@ -11,6 +11,11 @@ import {
   Text,
 } from "@react-three/drei";
 import { AnimatedLogo3D } from "./FloatingElements";
+import {
+  Performance3DMonitor,
+  AdaptiveLOD,
+  FrustumCulling,
+} from "./Performance3D";
 import * as THREE from "three";
 
 // Animated Planet Component
@@ -267,14 +272,29 @@ function Scene3D() {
 
 // Main Component
 const CosmicScene = () => {
+  const [performanceLevel, setPerformanceLevel] = useState<
+    "low" | "medium" | "high"
+  >("high");
+
   return (
     <div className="fixed inset-0 pointer-events-none z-0">
       <Canvas
         camera={{ position: [0, 0, 5], fov: 75 }}
         style={{ background: "transparent" }}
-        gl={{ alpha: true, antialias: true }}
+        gl={{
+          alpha: true,
+          antialias: performanceLevel === "high",
+          powerPreference: "high-performance",
+        }}
+        dpr={performanceLevel === "low" ? 1 : window.devicePixelRatio}
+        frameloop="demand"
       >
-        <Scene3D />
+        <Performance3DMonitor onPerformanceChange={setPerformanceLevel} />
+        <AdaptiveLOD>
+          <FrustumCulling>
+            <Scene3D />
+          </FrustumCulling>
+        </AdaptiveLOD>
       </Canvas>
     </div>
   );
