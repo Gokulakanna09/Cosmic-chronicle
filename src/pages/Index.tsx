@@ -22,8 +22,10 @@ import {
 } from "../data/astronomicalEvents";
 
 const Index = () => {
-  const [selectedDate, setSelectedDate] = useState(new Date());
-  const [events, setEvents] = useState(getEventsForDate(new Date()));
+  const [selectedDate, setSelectedDate] = useState(new Date("2024-07-20")); // Apollo 11 Moon Landing
+  const [events, setEvents] = useState(
+    getEventsForDate(new Date("2024-07-20")),
+  );
   const [viewMode, setViewMode] = useState<"date" | "all" | "month">("date");
   const [isLoading, setIsLoading] = useState(false);
 
