@@ -8,6 +8,8 @@ import {
   Gamepad2,
   Star,
   Trophy,
+  Search,
+  Filter,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import StarryBackground from "../components/StarryBackground";
@@ -36,16 +38,35 @@ const Index = () => {
   const [isStoryModalOpen, setIsStoryModalOpen] = useState(false);
 
   useEffect(() => {
+    let filteredEvents: AstronomicalEvent[] = [];
+
     if (viewMode === "date") {
-      const dateEvents = getEventsForDate(selectedDate);
-      setEvents(dateEvents);
+      filteredEvents = getEventsForDate(selectedDate);
     } else if (viewMode === "month") {
-      const monthEvents = getEventsByMonth(selectedDate.getMonth() + 1);
-      setEvents(monthEvents);
+      filteredEvents = getEventsByMonth(selectedDate.getMonth() + 1);
     } else {
-      setEvents(getAllEvents());
+      filteredEvents = getAllEvents();
     }
-  }, [selectedDate, viewMode]);
+
+    // Apply search filter
+    if (searchQuery) {
+      filteredEvents = filteredEvents.filter(
+        (event) =>
+          event.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          event.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          event.year.toString().includes(searchQuery),
+      );
+    }
+
+    // Apply type filter
+    if (filterType !== "all") {
+      filteredEvents = filteredEvents.filter(
+        (event) => event.type === filterType,
+      );
+    }
+
+    setEvents(filteredEvents);
+  }, [selectedDate, viewMode, searchQuery, filterType]);
 
   const handleRandomEvent = () => {
     setIsLoading(true);
