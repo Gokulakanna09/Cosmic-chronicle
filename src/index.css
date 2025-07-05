@@ -221,7 +221,8 @@
     overflow: visible;
   }
 
-  .cosmic-word, .chronicle-word {
+  .cosmic-word,
+  .chronicle-word {
     display: inline-block;
     position: relative;
   }
@@ -230,7 +231,9 @@
     display: inline-block;
     opacity: 0;
     transform: translateY(30px) rotateX(-90deg);
-    animation: cosmic-reveal 0.8s ease-out forwards, cosmic-float 3s ease-in-out infinite;
+    animation:
+      cosmic-reveal 0.8s ease-out forwards,
+      cosmic-float 3s ease-in-out infinite;
     background: linear-gradient(45deg, #9333ea, #3b82f6, #ec4899);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -243,7 +246,9 @@
     display: inline-block;
     opacity: 0;
     transform: translateY(-30px) rotateY(90deg);
-    animation: chronicle-reveal 0.8s ease-out forwards, chronicle-glow 4s ease-in-out infinite;
+    animation:
+      chronicle-reveal 0.8s ease-out forwards,
+      chronicle-glow 4s ease-in-out infinite;
     background: linear-gradient(45deg, #fbbf24, #f59e0b, #d97706);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -283,7 +288,8 @@
   }
 
   @keyframes cosmic-float {
-    0%, 100% {
+    0%,
+    100% {
       transform: translateY(0px) rotateZ(0deg);
       filter: drop-shadow(0 0 10px rgba(147, 51, 234, 0.3)) hue-rotate(0deg);
     }
@@ -302,7 +308,8 @@
   }
 
   @keyframes chronicle-glow {
-    0%, 100% {
+    0%,
+    100% {
       transform: translateY(0px);
       filter: drop-shadow(0 0 15px rgba(251, 191, 36, 0.4)) brightness(1);
     }
@@ -427,7 +434,7 @@
   /* Mobile Touch Optimizations */
   @media (max-width: 768px) {
     .glass-effect {
-      backdrop-blur-md;
+      backdrop-filter: blur(8px);
     }
 
     .cosmic-glow {
@@ -435,7 +442,8 @@
     }
 
     /* Larger touch targets */
-    button, .cursor-pointer {
+    button,
+    .cursor-pointer {
       min-height: 44px;
       min-width: 44px;
     }
@@ -457,10 +465,19 @@
   }
 
   @keyframes counter-bounce {
-    0%, 100% { transform: scale(1); }
-    25% { transform: scale(1.1) rotate(-5deg); }
-    50% { transform: scale(1.2) rotate(0deg); }
-    75% { transform: scale(1.1) rotate(5deg); }
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(1.1) rotate(-5deg);
+    }
+    50% {
+      transform: scale(1.2) rotate(0deg);
+    }
+    75% {
+      transform: scale(1.1) rotate(5deg);
+    }
   }
 
   /* Timeline Mobile Optimizations */
@@ -475,11 +492,13 @@
   }
 
   /* Enhanced Form Styles */
-  input, select {
+  input,
+  select {
     transition: all 0.3s ease;
   }
 
-  input:focus, select:focus {
+  input:focus,
+  select:focus {
     box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.1);
     transform: translateY(-1px);
   }
@@ -491,13 +510,18 @@
   }
 
   .gradient-button::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
     transition: left 0.5s;
   }
 
