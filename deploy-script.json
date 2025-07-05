@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "deploy:netlify": "npm run build && npx netlify-cli deploy --prod --dir=dist",
+    "deploy:surge": "npm run build && cd dist && surge",
+    "deploy:gh-pages": "npm run build && npx gh-pages -d dist",
+    "preview": "npm run build && npx vite preview"
+  },
+  "deployment_notes": {
+    "netlify": "Run 'npm run deploy:netlify' after installing netlify-cli",
+    "surge": "Run 'npm run deploy:surge' after installing surge globally",
+    "github_pages": "Run 'npm run deploy:gh-pages' to deploy to GitHub Pages",
+    "preview": "Run 'npm run preview' to test the build locally"
+  }
+}
