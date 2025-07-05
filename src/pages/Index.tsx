@@ -369,6 +369,46 @@ const Index = () => {
                   </span>
                 </button>
               </div>
+
+              {/* Search and Filter Controls */}
+              <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
+                {/* Search Bar */}
+                <div className="relative flex-1 max-w-md">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-cosmic-blue" />
+                  <input
+                    type="text"
+                    placeholder="Search events, missions, years..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-full pl-10 pr-4 py-3 glass-effect rounded-xl border border-cosmic-blue/30 text-space-star placeholder-space-star/50 focus:border-cosmic-blue focus:outline-none transition-all duration-200 hover:border-cosmic-blue/50"
+                  />
+                  {searchQuery && (
+                    <button
+                      onClick={() => setSearchQuery("")}
+                      className="absolute right-3 top-1/2 transform -translate-y-1/2 text-space-star/50 hover:text-space-star transition-colors"
+                    >
+                      ✕
+                    </button>
+                  )}
+                </div>
+
+                {/* Filter Dropdown */}
+                <div className="relative">
+                  <Filter className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-cosmic-purple" />
+                  <select
+                    value={filterType}
+                    onChange={(e) => setFilterType(e.target.value)}
+                    className="pl-10 pr-8 py-3 glass-effect rounded-xl border border-cosmic-purple/30 text-space-star focus:border-cosmic-purple focus:outline-none transition-all duration-200 hover:border-cosmic-purple/50 cursor-pointer"
+                  >
+                    <option value="all">All Types</option>
+                    <option value="mission">🚀 Missions</option>
+                    <option value="discovery">🔭 Discoveries</option>
+                    <option value="observation">👁️ Observations</option>
+                    <option value="phenomenon">⭐ Phenomena</option>
+                    <option value="anniversary">📅 Anniversaries</option>
+                  </select>
+                </div>
+              </div>
             </div>
 
             {/* Interactive Stats */}
