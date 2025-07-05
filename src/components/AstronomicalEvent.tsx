@@ -82,8 +82,8 @@ const AstronomicalEventCard = ({
           {event.title}
         </h3>
 
-        {/* Description */}
-        <p className="text-space-star/80 text-sm leading-relaxed flex-grow mb-4">
+        {/* Description with improved readability */}
+        <p className="text-space-star text-sm leading-relaxed flex-grow mb-4 drop-shadow-lg bg-space-deep/30 p-3 rounded-lg backdrop-blur-sm">
           {event.description}
         </p>
 
@@ -100,10 +100,11 @@ const AstronomicalEventCard = ({
           </div>
 
           {onEventClick && (
-            <div className="flex items-center gap-2 text-cosmic-purple/70 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+            <button className="w-full mt-2 flex items-center justify-center gap-2 px-4 py-2 bg-cosmic-purple/20 hover:bg-cosmic-purple/40 border border-cosmic-purple/40 text-cosmic-purple text-xs font-medium rounded-lg transition-all duration-200 opacity-0 group-hover:opacity-100 hover:scale-105">
               <span>📖</span>
-              <span>Click to read the full story</span>
-            </div>
+              <span>Learn More</span>
+              <span className="text-xs">→</span>
+            </button>
           )}
         </div>
 
