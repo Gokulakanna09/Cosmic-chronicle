@@ -285,15 +285,15 @@ const Index = () => {
                 <button
                   onClick={handleRandomEvent}
                   disabled={isLoading}
-                  className="flex items-center gap-3 px-6 py-3 glass-effect rounded-xl border border-cosmic-pink/30 text-space-star hover:border-cosmic-pink/50 transition-all duration-300 cosmic-glow disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="group flex items-center gap-3 px-6 py-3 glass-effect rounded-xl border border-cosmic-pink/30 text-space-star hover:border-cosmic-pink/50 transition-all duration-300 cosmic-glow disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105"
                 >
                   <Shuffle
                     className={`w-5 h-5 text-cosmic-pink ${
-                      isLoading ? "animate-spin" : ""
+                      isLoading ? "animate-spin" : "group-hover:animate-bounce"
                     }`}
                   />
                   <span className="font-medium">
-                    {isLoading ? "Finding..." : "Random Event"}
+                    {isLoading ? "Time Warping..." : "Surprise Me 🚀"}
                   </span>
                 </button>
 
@@ -306,80 +306,95 @@ const Index = () => {
                 </Link>
               </div>
 
-              {/* View Mode Controls */}
+              {/* Enhanced View Mode Controls */}
               <div className="flex items-center gap-2 p-1 glass-effect rounded-lg border border-space-light/20">
                 <button
                   onClick={() => setViewMode("date")}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                  className={`group flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:scale-105 ${
                     viewMode === "date"
-                      ? "bg-cosmic-purple/30 text-cosmic-purple border border-cosmic-purple/50"
+                      ? "bg-cosmic-purple/30 text-cosmic-purple border border-cosmic-purple/50 shadow-lg"
                       : "text-space-star/70 hover:text-space-star hover:bg-space-light/20"
                   }`}
                 >
-                  <Calendar className="w-4 h-4" />
-                  This Date
+                  <div className="text-lg">📅</div>
+                  <span className="group-hover:tracking-wider transition-all duration-200">
+                    This Date
+                  </span>
                 </button>
                 <button
                   onClick={() => setViewMode("month")}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                  className={`group flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:scale-105 ${
                     viewMode === "month"
-                      ? "bg-cosmic-blue/30 text-cosmic-blue border border-cosmic-blue/50"
+                      ? "bg-cosmic-blue/30 text-cosmic-blue border border-cosmic-blue/50 shadow-lg"
                       : "text-space-star/70 hover:text-space-star hover:bg-space-light/20"
                   }`}
                 >
-                  <Calendar className="w-4 h-4" />
-                  This Month
+                  <div className="text-lg">🗓️</div>
+                  <span className="group-hover:tracking-wider transition-all duration-200">
+                    This Month
+                  </span>
                 </button>
                 <button
                   onClick={() => setViewMode("all")}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                  className={`group flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:scale-105 ${
                     viewMode === "all"
-                      ? "bg-cosmic-gold/30 text-cosmic-gold border border-cosmic-gold/50"
+                      ? "bg-cosmic-gold/30 text-cosmic-gold border border-cosmic-gold/50 shadow-lg"
                       : "text-space-star/70 hover:text-space-star hover:bg-space-light/20"
                   }`}
                 >
-                  <List className="w-4 h-4" />
-                  All Events
+                  <div className="text-lg">🌌</div>
+                  <span className="group-hover:tracking-wider transition-all duration-200">
+                    All Events
+                  </span>
                 </button>
               </div>
             </div>
 
-            {/* Stats */}
+            {/* Interactive Stats */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-16">
-              <div className="glass-effect rounded-xl p-6 cosmic-glow animate-slide-up">
+              <div className="group glass-effect rounded-xl p-6 cosmic-glow animate-slide-up hover:scale-105 hover:bg-cosmic-blue/10 transition-all duration-300 cursor-pointer border-2 border-transparent hover:border-cosmic-blue/50">
                 <div className="flex items-center justify-center gap-3 mb-2">
-                  <Rocket className="w-6 h-6 text-cosmic-blue" />
-                  <span className="text-2xl font-bold text-cosmic-blue">
+                  <Rocket className="w-6 h-6 text-cosmic-blue group-hover:animate-bounce" />
+                  <span className="text-2xl font-bold text-cosmic-blue group-hover:text-3xl transition-all duration-300 counter-animate">
                     65+
                   </span>
                 </div>
-                <p className="text-space-star/70 text-sm">
+                <p className="text-space-star/70 text-sm group-hover:text-space-star transition-colors duration-300">
                   Historic space events
                 </p>
+                <div className="w-full h-1 bg-cosmic-blue/20 rounded-full mt-3 overflow-hidden">
+                  <div className="h-full bg-cosmic-blue rounded-full w-0 group-hover:w-full transition-all duration-1000 delay-200" />
+                </div>
               </div>
 
-              <div className="glass-effect rounded-xl p-6 cosmic-glow animate-slide-up animation-delay-200 telescope-element">
+              <div className="group glass-effect rounded-xl p-6 cosmic-glow animate-slide-up animation-delay-200 telescope-element hover:scale-105 hover:bg-cosmic-purple/10 transition-all duration-300 cursor-pointer border-2 border-transparent hover:border-cosmic-purple/50">
                 <div className="flex items-center justify-center gap-3 mb-2">
-                  <Telescope className="w-6 h-6 text-cosmic-purple" />
-                  <span className="text-2xl font-bold text-cosmic-purple">
+                  <Telescope className="w-6 h-6 text-cosmic-purple group-hover:animate-pulse" />
+                  <span className="text-2xl font-bold text-cosmic-purple group-hover:text-3xl transition-all duration-300">
                     12
                   </span>
                 </div>
-                <p className="text-space-star/70 text-sm">
+                <p className="text-space-star/70 text-sm group-hover:text-space-star transition-colors duration-300">
                   Months of discoveries
                 </p>
+                <div className="w-full h-1 bg-cosmic-purple/20 rounded-full mt-3 overflow-hidden">
+                  <div className="h-full bg-cosmic-purple rounded-full w-0 group-hover:w-full transition-all duration-1000 delay-200" />
+                </div>
               </div>
 
-              <div className="glass-effect rounded-xl p-6 cosmic-glow animate-slide-up animation-delay-400">
+              <div className="group glass-effect rounded-xl p-6 cosmic-glow animate-slide-up animation-delay-400 hover:scale-105 hover:bg-cosmic-gold/10 transition-all duration-300 cursor-pointer border-2 border-transparent hover:border-cosmic-gold/50">
                 <div className="flex items-center justify-center gap-3 mb-2">
-                  <Calendar className="w-6 h-6 text-cosmic-gold" />
-                  <span className="text-2xl font-bold text-cosmic-gold">
+                  <Calendar className="w-6 h-6 text-cosmic-gold group-hover:animate-spin" />
+                  <span className="text-2xl font-bold text-cosmic-gold group-hover:text-3xl transition-all duration-300">
                     {events.length}
                   </span>
                 </div>
-                <p className="text-space-star/70 text-sm">
+                <p className="text-space-star/70 text-sm group-hover:text-space-star transition-colors duration-300">
                   Events currently shown
                 </p>
+                <div className="w-full h-1 bg-cosmic-gold/20 rounded-full mt-3 overflow-hidden">
+                  <div className="h-full bg-cosmic-gold rounded-full w-0 group-hover:w-full transition-all duration-1000 delay-200" />
+                </div>
               </div>
             </div>
           </div>
@@ -444,10 +459,19 @@ const Index = () => {
 
                 <Link
                   to="/sky-artist"
-                  className="inline-flex items-center gap-3 px-8 py-4 bg-cosmic-gold/20 hover:bg-cosmic-gold/30 border border-cosmic-gold/40 text-cosmic-gold rounded-xl text-lg font-medium transition-all duration-300 hover:scale-105 cosmic-glow"
+                  className="group inline-flex items-center gap-4 px-12 py-6 bg-gradient-to-r from-cosmic-gold via-cosmic-pink to-cosmic-purple hover:from-cosmic-purple hover:via-cosmic-gold hover:to-cosmic-pink rounded-2xl text-white text-xl font-bold transition-all duration-500 hover:scale-110 transform shadow-2xl hover:shadow-cosmic-gold/50 border-2 border-transparent hover:border-cosmic-gold/60"
+                  style={{
+                    background:
+                      "linear-gradient(45deg, #fbbf24, #ec4899, #9333ea)",
+                    boxShadow:
+                      "0 0 40px rgba(251, 191, 36, 0.4), 0 10px 30px rgba(0, 0, 0, 0.3)",
+                  }}
                 >
-                  <Star className="w-6 h-6 animate-twinkle" />
-                  <span>Start Creating</span>
+                  <Star className="w-8 h-8 animate-twinkle group-hover:animate-spin" />
+                  <span className="group-hover:tracking-wider transition-all duration-300">
+                    Start Creating ✨
+                  </span>
+                  <div className="w-2 h-2 bg-white rounded-full animate-pulse group-hover:animate-bounce" />
                 </Link>
               </div>
             </div>
