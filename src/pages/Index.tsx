@@ -512,11 +512,20 @@ const Index = () => {
                   <div className="glass-effect rounded-xl p-6 border border-cosmic-gold/20">
                     <Trophy className="w-8 h-8 text-cosmic-gold mx-auto mb-3" />
                     <h3 className="font-bold text-cosmic-gold mb-2">
-                      Earn Stardust
+                      Earn Stardust & Climb Leaderboards
                     </h3>
                     <p className="text-space-star/70 text-sm">
-                      Gain points for creativity and save your masterpieces
+                      Compete globally, unlock achievements, and showcase your
+                      cosmic creations
                     </p>
+                    <div className="flex justify-center gap-2 mt-3">
+                      <span className="px-2 py-1 bg-cosmic-gold/20 text-cosmic-gold text-xs rounded-full">
+                        🏆 Rankings
+                      </span>
+                      <span className="px-2 py-1 bg-cosmic-gold/20 text-cosmic-gold text-xs rounded-full">
+                        🎖️ Badges
+                      </span>
+                    </div>
                   </div>
                 </div>
 
