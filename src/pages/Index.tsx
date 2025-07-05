@@ -38,10 +38,6 @@ const Index = () => {
   const [isStoryModalOpen, setIsStoryModalOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [filterType, setFilterType] = useState<string>("all");
-  const [selectedEvent, setSelectedEvent] = useState<AstronomicalEvent | null>(
-    null,
-  );
-  const [isStoryModalOpen, setIsStoryModalOpen] = useState(false);
 
   useEffect(() => {
     let filteredEvents: AstronomicalEvent[] = [];
